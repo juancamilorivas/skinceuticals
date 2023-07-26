@@ -5700,6 +5700,9 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`,
                 ></span>
               </div>
             </div>
+
+
+
             <div class="mt-2">
               <label
                 for="username"
@@ -5710,7 +5713,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`,
                 <input
                   value="2023-01-01"
                   min="1940-01-01"
-                  max="2005-12-31"
+                  max="2004-12-31"
                   type="date"
                   name="birthday"
                   x-model="birthday"
@@ -6336,44 +6339,45 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`,
     </div>
 
     <!-- Place the following JavaScript code inside the <body> tag or at the end of the HTML file -->
-    <script>
-      // Get references to the input fields and the "Continuar" button
-      const firstNameInput = document.querySelector('input[name="first-name"]');
-      const lastNameInput = document.querySelector('input[name="last-name"]');
-      const emailInput = document.querySelector('input[name="email"]');
-      const birthdayInput = document.querySelector('input[name="birthday"]');
-      const continueBtn = document.getElementById("continueBtn");
+<script>
+  // Get references to the input fields and the "Continuar" button
+  const firstNameInput = document.querySelector('input[name="first-name"]');
+  const lastNameInput = document.querySelector('input[name="last-name"]');
+  const emailInput = document.querySelector('input[name="email"]');
+  const birthdayInput = document.querySelector('input[name="birthday"]');
+  const continueBtn = document.getElementById('continueBtn');
 
-      // Function to check if all fields are completed
-      function areAllFieldsCompleted() {
-        return (
-          firstNameInput.value.trim() !== "" &&
-          lastNameInput.value.trim() !== "" &&
-          isValidEmail(emailInput.value.trim()) &&
-          birthdayInput.value.trim() !== ""
-        );
-      }
+  // Function to check if all fields are completed
+  function areAllFieldsCompleted() {
+    return (
+      firstNameInput.value.trim() !== '' &&
+      lastNameInput.value.trim() !== '' &&
+      isValidEmail(emailInput.value.trim()) &&
+      birthdayInput.value.trim() !== ''
+    );
+  }
 
-      // Function to check if the email address is valid using regex
-      function isValidEmail(email) {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
-      }
+  // Function to check if the email address is valid using regex
+  function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  }
 
-      // Function to enable/disable the "Continuar" button based on the fields' completion
-      function updateContinueButtonState() {
-        if (areAllFieldsCompleted()) {
-          continueBtn.disabled = false;
-        } else {
-          continueBtn.disabled = true;
-        }
-      }
+  // Function to enable/disable the "Continuar" button based on the fields' completion
+  function updateContinueButtonState() {
+    if (areAllFieldsCompleted()) {
+      continueBtn.disabled = false;
+    } else {
+      continueBtn.disabled = true;
+    }
+  }
 
-      // Add event listeners to the input fields to update the button state on input change
-      firstNameInput.addEventListener("input", updateContinueButtonState);
-      lastNameInput.addEventListener("input", updateContinueButtonState);
-      emailInput.addEventListener("input", updateContinueButtonState);
-      birthdayInput.addEventListener("input", updateContinueButtonState);
-    </script>
+  // Add event listeners to the input fields to update the button state on input change
+  firstNameInput.addEventListener('input', updateContinueButtonState);
+  lastNameInput.addEventListener('input', updateContinueButtonState);
+  emailInput.addEventListener('input', updateContinueButtonState);
+  birthdayInput.addEventListener('input', updateContinueButtonState);
+</script>
+
   </body>
 </html>
